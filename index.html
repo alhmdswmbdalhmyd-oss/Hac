@@ -12,417 +12,477 @@
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;
-  font-family:Cairo,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
+margin:0;
+font-family:Cairo,sans-serif;
+background:#f5f7fb;
+color:#172033
 }
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 .hidden{display:none!important}
 
 .auth{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  background:linear-gradient(135deg,#f7faff,#edf3ff);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:linear-gradient(135deg,#f7faff,#edf3ff)
 }
+
 .auth-card{
-  width:100%;
-  max-width:430px;
-  background:#fff;
-  padding:28px;
-  border-radius:24px;
-  box-shadow:0 20px 60px rgba(20,40,80,.12);
+width:100%;
+max-width:430px;
+background:#fff;
+padding:28px;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(20,40,80,.12)
 }
+
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:25px;
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:25px
 }
+
 .logo-icon{
-  width:50px;
-  height:50px;
-  border-radius:15px;
-  background:#2161f5;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  font-weight:800;
+width:52px;
+height:52px;
+border-radius:15px;
+background:#2161f5;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+font-weight:800
 }
+
 .logo h1{margin:0;font-size:23px}
 .logo p{margin:3px 0;color:#7b8492;font-size:12px}
 
 h2,h3{margin-top:0}
+
 label{
-  display:block;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:14px;
+display:block;
+font-size:13px;
+font-weight:700;
+margin-bottom:14px
 }
+
 input,select,textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #dce2eb;
-  border-radius:11px;
-  outline:none;
-  background:#fff;
-  margin-top:6px;
+width:100%;
+padding:12px;
+border:1px solid #dce2eb;
+border-radius:11px;
+outline:none;
+background:#fff;
+margin-top:6px
 }
+
 input:focus,select:focus,textarea:focus{
-  border-color:#2161f5;
-  box-shadow:0 0 0 3px rgba(33,97,245,.08);
+border-color:#2161f5;
+box-shadow:0 0 0 3px rgba(33,97,245,.08)
 }
+
 .primary{
-  border:0;
-  background:#2161f5;
-  color:#fff;
-  padding:11px 17px;
-  border-radius:11px;
-  font-weight:700;
+border:0;
+background:#2161f5;
+color:#fff;
+padding:11px 17px;
+border-radius:11px;
+font-weight:700
 }
+
 .primary:hover{filter:brightness(.95)}
 .full{width:100%}
+
 .link{
-  border:0;
-  background:none;
-  color:#2161f5;
-  width:100%;
-  padding:12px;
+border:0;
+background:none;
+color:#2161f5;
+width:100%;
+padding:12px
 }
+
 .error{
-  background:#fff0f0;
-  color:#bd2e2e;
-  padding:10px;
-  border-radius:9px;
-  margin-bottom:12px;
-  font-size:12px;
+background:#fff0f0;
+color:#bd2e2e;
+padding:10px;
+border-radius:9px;
+margin-bottom:12px;
+font-size:12px
 }
 
 .topbar{
-  height:68px;
-  background:#fff;
-  border-bottom:1px solid #e7ebf1;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
-  position:sticky;
-  top:0;
-  z-index:20;
+height:68px;
+background:#fff;
+border-bottom:1px solid #e7ebf1;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+position:sticky;
+top:0;
+z-index:20
 }
+
 .top-logo{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-weight:800;
+display:flex;
+align-items:center;
+gap:9px;
+font-weight:800
 }
+
 .top-logo .logo-icon{
-  width:37px;
-  height:37px;
-  border-radius:11px;
-  font-size:18px;
+width:37px;
+height:37px;
+border-radius:11px;
+font-size:18px
 }
+
 .top-user{
-  display:flex;
-  align-items:center;
-  gap:10px;
+display:flex;
+align-items:center;
+gap:10px
 }
+
 .logout{
-  border:1px solid #efcccc;
-  background:#fff;
-  color:#c0392b;
-  border-radius:9px;
-  padding:8px 12px;
+border:1px solid #efcccc;
+background:#fff;
+color:#c0392b;
+border-radius:9px;
+padding:8px 12px
 }
 
 .layout{
-  display:flex;
-  min-height:calc(100vh - 68px);
+display:flex;
+min-height:calc(100vh - 68px)
 }
+
 .sidebar{
-  width:220px;
-  background:#fff;
-  border-left:1px solid #e7ebf1;
-  padding:14px;
+width:220px;
+background:#fff;
+border-left:1px solid #e7ebf1;
+padding:14px
 }
+
 .nav{
-  width:100%;
-  border:0;
-  background:#fff;
-  text-align:right;
-  padding:12px;
-  margin-bottom:4px;
-  border-radius:10px;
-  color:#626d7d;
+width:100%;
+border:0;
+background:#fff;
+text-align:right;
+padding:12px;
+margin-bottom:4px;
+border-radius:10px;
+color:#626d7d
 }
+
 .nav:hover,.nav.active{
-  background:#edf3ff;
-  color:#2161f5;
-  font-weight:700;
+background:#edf3ff;
+color:#2161f5;
+font-weight:700
 }
+
 .content{
-  flex:1;
-  width:100%;
-  max-width:1400px;
-  padding:25px;
-  margin:auto;
+flex:1;
+width:100%;
+max-width:1400px;
+padding:25px;
+margin:auto
 }
+
 .page{display:none}
 .page.active{display:block}
 
 .page-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:20px
 }
+
 .page-head h2{margin-bottom:3px}
 .page-head p{
-  margin:0;
-  color:#7b8492;
-  font-size:13px;
+margin:0;
+color:#7b8492;
+font-size:13px
 }
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:12px;
-  margin-bottom:18px;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:12px;
+margin-bottom:18px
 }
+
 .stat{
-  background:#fff;
-  border:1px solid #e7ebf1;
-  border-radius:15px;
-  padding:17px;
+background:#fff;
+border:1px solid #e7ebf1;
+border-radius:15px;
+padding:17px
 }
+
 .stat span{
-  color:#7a8390;
-  display:block;
-  font-size:12px;
-  margin-bottom:8px;
+color:#7a8390;
+display:block;
+font-size:12px;
+margin-bottom:8px
 }
+
 .stat b{font-size:19px}
 
 .panel{
-  background:#fff;
-  border:1px solid #e7ebf1;
-  border-radius:16px;
-  padding:18px;
-  margin-bottom:18px;
+background:#fff;
+border:1px solid #e7ebf1;
+border-radius:16px;
+padding:18px;
+margin-bottom:18px
 }
+
 .panel-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center
 }
+
 .table-wrap{overflow:auto}
+
 table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:650px;
+width:100%;
+border-collapse:collapse;
+min-width:650px
 }
+
 th,td{
-  padding:11px;
-  border-bottom:1px solid #edf0f4;
-  text-align:right;
-  font-size:13px;
+padding:11px;
+border-bottom:1px solid #edf0f4;
+text-align:right;
+font-size:13px
 }
+
 th{
-  background:#fafbfc;
-  color:#697384;
+background:#fafbfc;
+color:#697384
 }
+
 .small{
-  border:0;
-  background:#edf3ff;
-  color:#2161f5;
-  border-radius:8px;
-  padding:7px 10px;
+border:0;
+background:#edf3ff;
+color:#2161f5;
+border-radius:8px;
+padding:7px 10px
 }
+
 .danger{
-  border:0;
-  background:#dc3c3c;
-  color:#fff;
-  border-radius:8px;
-  padding:7px 10px;
+border:0;
+background:#dc3c3c;
+color:#fff;
+border-radius:8px;
+padding:7px 10px
 }
-.form{
-  max-width:650px;
-}
+
+.form{max-width:650px}
+
 .calc{
-  background:#f2f6ff;
-  border-radius:13px;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
+background:#f2f6ff;
+border-radius:13px;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px
 }
+
 .calc b{
-  color:#2161f5;
-  font-size:21px;
+color:#2161f5;
+font-size:21px
 }
+
 .alert{
-  background:#fff7e5;
-  border:1px solid #ffe0a0;
-  color:#815b00;
-  padding:11px;
-  border-radius:10px;
-  margin-bottom:8px;
-  font-size:13px;
+background:#fff7e5;
+border:1px solid #ffe0a0;
+color:#815b00;
+padding:11px;
+border-radius:10px;
+margin-bottom:8px;
+font-size:13px
 }
+
 .badge{
-  background:#edf3ff;
-  color:#2161f5;
-  padding:4px 8px;
-  border-radius:20px;
-  font-size:11px;
+background:#edf3ff;
+color:#2161f5;
+padding:4px 8px;
+border-radius:20px;
+font-size:11px
 }
+
 .low{color:#c27800;font-weight:700}
 .good{color:#16824b;font-weight:700}
 
-.calculator{
-  max-width:700px;
-}
+.calculator{max-width:700px}
+
 .calc-results{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px
 }
+
 .calc-results div{
-  background:#f7f8fa;
-  padding:15px;
-  border-radius:12px;
+background:#f7f8fa;
+padding:15px;
+border-radius:12px
 }
+
 .calc-results b{
-  display:block;
-  margin-top:6px;
-  font-size:18px;
+display:block;
+margin-top:6px;
+font-size:18px
 }
 
 .filters{
-  display:flex;
-  gap:10px;
+display:flex;
+gap:10px
 }
+
 .filters>*{max-width:220px}
 
 .backup{
-  max-width:600px;
-  display:grid;
-  gap:12px;
+max-width:600px;
+display:grid;
+gap:12px
 }
+
 .file-btn{
-  display:block;
-  width:max-content;
-  background:#edf3ff;
-  color:#2161f5;
-  padding:11px 15px;
-  border-radius:10px;
-  cursor:pointer;
+display:block;
+width:max-content;
+background:#edf3ff;
+color:#2161f5;
+padding:11px 15px;
+border-radius:10px;
+cursor:pointer
 }
+
 .file-btn input{display:none}
 
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(10,20,35,.55);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
-  z-index:100;
+position:fixed;
+inset:0;
+background:rgba(10,20,35,.55);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:15px;
+z-index:100
 }
+
 .modal-card{
-  width:100%;
-  max-width:620px;
-  max-height:90vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:18px;
-  padding:23px;
-  position:relative;
+width:100%;
+max-width:620px;
+max-height:90vh;
+overflow:auto;
+background:#fff;
+border-radius:18px;
+padding:23px;
+position:relative
 }
+
 .close{
-  position:absolute;
-  left:15px;
-  top:12px;
-  border:0;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  background:#f0f2f5;
-  font-size:20px;
+position:absolute;
+left:15px;
+top:12px;
+border:0;
+width:32px;
+height:32px;
+border-radius:50%;
+background:#f0f2f5;
+font-size:20px
 }
+
 .modal-actions{
-  display:flex;
-  gap:8px;
-  margin-top:10px;
+display:flex;
+gap:8px;
+margin-top:10px
 }
+
 .secondary{
-  border:0;
-  background:#edf0f4;
-  padding:10px 14px;
-  border-radius:9px;
+border:0;
+background:#edf0f4;
+padding:10px 14px;
+border-radius:9px
 }
 
 #toast{
-  position:fixed;
-  left:18px;
-  bottom:18px;
-  z-index:200;
+position:fixed;
+left:18px;
+bottom:18px;
+z-index:200
 }
+
 .toast{
-  background:#172033;
-  color:#fff;
-  padding:11px 15px;
-  border-radius:10px;
-  margin-top:7px;
-  font-size:13px;
+background:#172033;
+color:#fff;
+padding:11px 15px;
+border-radius:10px;
+margin-top:7px;
+font-size:13px
 }
+
 .toast.error{background:#c0392b}
 
 @media(max-width:1000px){
-  .stats{grid-template-columns:repeat(3,1fr)}
+.stats{grid-template-columns:repeat(3,1fr)}
 }
+
 @media(max-width:700px){
-  .topbar{padding:0 12px}
-  .top-user span{display:none}
-  .layout{display:block}
-  .sidebar{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    padding:7px;
-    position:sticky;
-    top:68px;
-    z-index:10;
-  }
-  .nav{
-    text-align:center;
-    font-size:11px;
-    padding:9px 3px;
-  }
-  .content{padding:14px}
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-    gap:8px;
-  }
-  .stat{padding:13px}
-  .stat b{font-size:16px}
-  .page-head{align-items:flex-start}
-  .page-head h2{font-size:20px}
-  .calc-results{grid-template-columns:1fr}
-  .filters{display:block}
-  .filters>*{
-    max-width:none;
-    margin-bottom:8px;
-  }
+
+.topbar{padding:0 12px}
+
+.top-user span{display:none}
+
+.layout{display:block}
+
+.sidebar{
+width:100%;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+padding:7px;
+position:sticky;
+top:68px;
+z-index:10
+}
+
+.nav{
+text-align:center;
+font-size:11px;
+padding:9px 3px
+}
+
+.content{padding:14px}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+gap:8px
+}
+
+.stat{padding:13px}
+.stat b{font-size:16px}
+
+.page-head{align-items:flex-start}
+
+.page-head h2{font-size:20px}
+
+.calc-results{grid-template-columns:1fr}
+
+.filters{display:block}
+
+.filters>*{
+max-width:none;
+margin-bottom:8px
+}
+
 }
 </style>
 </head>
@@ -431,101 +491,107 @@ th{
 
 <div id="toast"></div>
 
-<!-- تسجيل الدخول -->
 <section id="auth" class="auth">
-  <div class="auth-card">
 
-    <div class="logo">
-      <div class="logo-icon">N</div>
-      <div>
-        <h1>NEXO حسابي</h1>
-        <p>تجارتك محسوبة. أرباحك واضحة.</p>
-      </div>
-    </div>
+<div class="auth-card">
 
-    <div id="loginBox">
-      <h2>تسجيل الدخول</h2>
+<div class="logo">
+<div class="logo-icon">N</div>
+<div>
+<h1>NEXO حسابي</h1>
+<p>تجارتك محسوبة. أرباحك واضحة.</p>
+</div>
+</div>
 
-      <div id="loginError"></div>
 
-      <label>
-        اسم المستخدم
-        <input id="loginUsername" autocomplete="username">
-      </label>
+<div id="loginBox">
 
-      <label>
-        كلمة المرور
-        <input id="loginPassword" type="password" autocomplete="current-password">
-      </label>
+<h2>تسجيل الدخول</h2>
 
-      <button class="primary full" id="loginBtn">دخول</button>
+<div id="loginError"></div>
 
-      <button class="link" id="showRegister">
-        إنشاء حساب جديد
-      </button>
-    </div>
+<label>
+اسم المستخدم
+<input id="loginUsername" autocomplete="username">
+</label>
 
-    <div id="registerBox" class="hidden">
+<label>
+كلمة المرور
+<input id="loginPassword" type="password">
+</label>
 
-      <h2>إنشاء حساب</h2>
+<button class="primary full" id="loginBtn">
+دخول
+</button>
 
-      <div id="registerError"></div>
+<button class="link" id="showRegister">
+إنشاء حساب جديد
+</button>
 
-      <label>
-        الاسم
-        <input id="regName">
-      </label>
+</div>
 
-      <label>
-        اسم المستخدم
-        <input id="regUsername">
-      </label>
 
-      <label>
-        اسم المتجر
-        <input id="regStore">
-      </label>
+<div id="registerBox" class="hidden">
 
-      <label>
-        كلمة المرور
-        <input id="regPassword" type="password">
-      </label>
+<h2>إنشاء حساب جديد</h2>
 
-      <label>
-        تأكيد كلمة المرور
-        <input id="regPassword2" type="password">
-      </label>
+<div id="registerError"></div>
 
-      <button class="primary full" id="registerBtn">
-        إنشاء الحساب
-      </button>
+<label>
+الاسم
+<input id="regName">
+</label>
 
-      <button class="link" id="showLogin">
-        لدي حساب بالفعل
-      </button>
+<label>
+اسم المستخدم
+<input id="regUsername">
+</label>
 
-    </div>
+<label>
+اسم المتجر
+<input id="regStore">
+</label>
 
-  </div>
+<label>
+كلمة المرور
+<input id="regPassword" type="password">
+</label>
+
+<label>
+تأكيد كلمة المرور
+<input id="regPassword2" type="password">
+</label>
+
+<button class="primary full" id="registerBtn">
+إنشاء الحساب والدخول
+</button>
+
+<button class="link" id="showLogin">
+لدي حساب بالفعل
+</button>
+
+</div>
+
+</div>
 </section>
 
 
-<!-- التطبيق -->
 <section id="app" class="hidden">
 
 <header class="topbar">
 
-  <div class="top-logo">
-    <div class="logo-icon">N</div>
-    <strong>NEXO حسابي</strong>
-  </div>
+<div class="top-logo">
+<div class="logo-icon">N</div>
+<strong>NEXO حسابي</strong>
+</div>
 
-  <div class="top-user">
-    <span id="topUser"></span>
-    <button class="logout" id="logoutBtn">تسجيل الخروج</button>
-  </div>
+<div class="top-user">
+<span id="topUser"></span>
+<button class="logout" id="logoutBtn">خروج</button>
+</div>
 
 </header>
+
 
 <div class="layout">
 
@@ -544,9 +610,10 @@ th{
 
 </aside>
 
+
 <main class="content">
 
-<!-- الرئيسية -->
+
 <section id="dashboard" class="page active">
 
 <div class="page-head">
@@ -596,7 +663,6 @@ th{
 
 <div class="panel-head">
 <h3>آخر العمليات</h3>
-<button class="small" data-go="reports">التقارير</button>
 </div>
 
 <div id="recentTransactions" class="table-wrap"></div>
@@ -606,7 +672,6 @@ th{
 </section>
 
 
-<!-- المنتجات -->
 <section id="products" class="page">
 
 <div class="page-head">
@@ -633,13 +698,12 @@ th{
 </section>
 
 
-<!-- البيع -->
 <section id="sales" class="page">
 
 <div class="page-head">
 <div>
 <h2>بيع جديد</h2>
-<p>سجل البيع وسيتم خصم الكمية من المخزون.</p>
+<p>تسجيل عملية بيع وخصمها من المخزون.</p>
 </div>
 </div>
 
@@ -656,7 +720,7 @@ th{
 </label>
 
 <label>
-سعر البيع للقطعة
+سعر البيع
 <input id="salePrice" type="number" min="0" step="0.01">
 </label>
 
@@ -674,13 +738,12 @@ th{
 </section>
 
 
-<!-- الشراء -->
 <section id="purchases" class="page">
 
 <div class="page-head">
 <div>
 <h2>شراء جديد</h2>
-<p>أضف الكمية الجديدة إلى المخزون.</p>
+<p>إضافة كمية إلى المخزون.</p>
 </div>
 </div>
 
@@ -697,12 +760,12 @@ th{
 </label>
 
 <label>
-سعر الشراء للقطعة
+سعر الشراء
 <input id="purchasePrice" type="number" min="0" step="0.01">
 </label>
 
 <div class="calc">
-<span>إجمالي الشراء</span>
+<span>الإجمالي</span>
 <b id="purchaseTotal">0 ر.س</b>
 </div>
 
@@ -715,18 +778,17 @@ th{
 </section>
 
 
-<!-- المصاريف -->
 <section id="expenses" class="page">
 
 <div class="page-head">
 
 <div>
 <h2>المصاريف</h2>
-<p>المصاريف تدخل تلقائيًا في حساب صافي الربح.</p>
+<p>تخصم من صافي الربح.</p>
 </div>
 
 <button class="primary" id="addExpenseBtn">
-+ مصروف جديد
++ مصروف
 </button>
 
 </div>
@@ -738,14 +800,15 @@ th{
 </section>
 
 
-<!-- المخزون -->
 <section id="inventory" class="page">
 
 <div class="page-head">
+
 <div>
 <h2>المخزون</h2>
-<p>تابع الكميات والتنبيهات.</p>
+<p>متابعة جميع الكميات.</p>
 </div>
+
 </div>
 
 <div class="panel">
@@ -755,34 +818,39 @@ th{
 </section>
 
 
-<!-- التقارير -->
 <section id="reports" class="page">
 
 <div class="page-head">
+
 <div>
 <h2>التقارير</h2>
-<p>تحليل المبيعات والمصاريف والأرباح.</p>
+<p>المبيعات والأرباح والمصاريف.</p>
 </div>
+
 </div>
 
 <div class="panel filters">
 
 <select id="reportPeriod">
+
 <option value="today">اليوم</option>
 <option value="yesterday">أمس</option>
 <option value="week">هذا الأسبوع</option>
 <option value="month">هذا الشهر</option>
-<option value="custom">تحديد تاريخ</option>
+<option value="custom">تاريخ مخصص</option>
+
 </select>
 
 <input id="reportFrom" type="date" class="hidden">
+
 <input id="reportTo" type="date" class="hidden">
 
 <button class="primary" id="runReport">
-عرض التقرير
+عرض
 </button>
 
 </div>
+
 
 <div class="stats">
 
@@ -802,7 +870,7 @@ th{
 </div>
 
 <div class="stat">
-<span>تكلفة المنتجات المباعة</span>
+<span>تكلفة المبيعات</span>
 <b id="rCost">0 ر.س</b>
 </div>
 
@@ -820,7 +888,7 @@ th{
 
 <div class="panel">
 
-<h3>الأكثر مبيعًا</h3>
+<h3>الأكثر مبيعاً</h3>
 
 <div id="topProducts" class="table-wrap"></div>
 
@@ -829,14 +897,15 @@ th{
 </section>
 
 
-<!-- الحاسبة -->
 <section id="calculator" class="page">
 
 <div class="page-head">
+
 <div>
 <h2>الحاسبة</h2>
-<p>احسب الربح المتوقع فورًا.</p>
+<p>حساب الربح المتوقع.</p>
 </div>
+
 </div>
 
 <div class="panel calculator">
@@ -853,24 +922,24 @@ th{
 
 <label>
 الكمية
-<input id="cQty" type="number" value="20">
+<input id="cQty" type="number" value="1">
 </label>
 
 <div class="calc-results">
 
 <div>
 إجمالي الشراء
-<b id="cTotalBuy">100 ر.س</b>
+<b id="cTotalBuy">0 ر.س</b>
 </div>
 
 <div>
 إجمالي البيع
-<b id="cTotalSell">200 ر.س</b>
+<b id="cTotalSell">0 ر.س</b>
 </div>
 
 <div>
-الربح المتوقع
-<b id="cProfit">100 ر.س</b>
+الربح
+<b id="cProfit">0 ر.س</b>
 </div>
 
 </div>
@@ -880,14 +949,15 @@ th{
 </section>
 
 
-<!-- الحساب -->
 <section id="account" class="page">
 
 <div class="page-head">
+
 <div>
 <h2>حسابي</h2>
-<p>بيانات حسابك ومتجرك.</p>
+<p>بيانات الحساب والمتجر.</p>
 </div>
+
 </div>
 
 <div class="panel form">
@@ -913,7 +983,7 @@ th{
 </label>
 
 <button class="primary" id="saveAccount">
-حفظ البيانات
+حفظ
 </button>
 
 </div>
@@ -921,24 +991,25 @@ th{
 </section>
 
 
-<!-- النسخ الاحتياطي -->
 <section id="backup" class="page">
 
 <div class="page-head">
+
 <div>
 <h2>النسخ الاحتياطي</h2>
-<p>احتفظ بنسخة من بياناتك واسترجعها عند الحاجة.</p>
+<p>تصدير واسترجاع بياناتك.</p>
 </div>
+
 </div>
 
 <div class="panel backup">
 
 <button class="primary" id="exportBtn">
-تصدير بياناتي
+تصدير البيانات
 </button>
 
 <label class="file-btn">
-استرجاع نسخة JSON
+استرجاع نسخة
 <input id="importFile" type="file" accept=".json">
 </label>
 
@@ -946,12 +1017,12 @@ th{
 
 </section>
 
+
 </main>
 </div>
 </section>
 
 
-<!-- النافذة -->
 <div id="modal" class="modal hidden">
 
 <div class="modal-card">
@@ -967,53 +1038,58 @@ th{
 
 <script type="module">
 
-/* =========================================================
-   NEXO حسابي
-   Firebase Authentication + Firestore
-   ========================================================= */
-
-/*
-  مهم جدًا:
-  استبدل القيم التالية بقيم مشروع Firebase الحقيقي.
-*/
-
-import {initializeApp}
+import {
+initializeApp
+}
 from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
 import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
 }
 from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  updateDoc,
-  deleteDoc,
-  collection,
-  addDoc,
-  getDocs,
-  query,
-  orderBy,
-  writeBatch,
-  serverTimestamp
+getFirestore,
+doc,
+getDoc,
+setDoc,
+updateDoc,
+deleteDoc,
+collection,
+addDoc,
+getDocs,
+query,
+orderBy,
+serverTimestamp,
+writeBatch
 }
 from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 
+/*
+=========================================================
+ضع بيانات Firebase الخاصة بك هنا فقط.
+=========================================================
+*/
+
 const firebaseConfig={
-  apiKey:"ضع_API_KEY_هنا",
-  authDomain:"ضع-PROJECT-ID.firebaseapp.com",
-  projectId:"ضع-PROJECT-ID",
-  storageBucket:"ضع-PROJECT-ID.firebasestorage.app",
-  messagingSenderId:"ضع-SENDER-ID",
-  appId:"ضع-APP-ID"
+
+apiKey:"ضع_API_KEY_هنا",
+
+authDomain:"ضع_PROJECT_ID.firebaseapp.com",
+
+projectId:"ضع_PROJECT_ID_هنا",
+
+storageBucket:"ضع_PROJECT_ID.firebasestorage.app",
+
+messagingSenderId:"ضع_MESSAGING_SENDER_ID_هنا",
+
+appId:"ضع_APP_ID_هنا"
+
 };
 
 
@@ -1025,947 +1101,1112 @@ const db=getFirestore(firebaseApp);
 
 
 let currentUser=null;
-let profile=null;
+
+let profile={};
 
 let products=[];
+
 let transactions=[];
+
 let expenses=[];
 
 
-/* =========================
-   أدوات
-========================= */
-
 const $=id=>document.getElementById(id);
 
-function money(number){
-  return Number(number||0).toLocaleString("ar-SA",{
-    maximumFractionDigits:2
-  })+" ر.س";
-}
 
-function escapeHTML(value){
-  return String(value??"")
-  .replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;")
-  .replace(/"/g,"&quot;")
-  .replace(/'/g,"&#039;");
-}
+function money(v){
 
-function showToast(message,error=false){
+return Number(v||0).toLocaleString(
+"ar-SA",
+{maximumFractionDigits:2}
+)+" ر.س";
 
-  const box=document.createElement("div");
-
-  box.className="toast"+(error?" error":"");
-
-  box.textContent=message;
-
-  $("toast").appendChild(box);
-
-  setTimeout(()=>{
-    box.remove();
-  },3000);
-}
-
-function userDocument(){
-  return doc(db,"users",currentUser.uid);
-}
-
-function userCollection(name){
-  return collection(
-    db,
-    "users",
-    currentUser.uid,
-    name
-  );
-}
-
-function timestampToDate(value){
-
-  if(!value) return new Date();
-
-  if(value.seconds){
-    return new Date(value.seconds*1000);
-  }
-
-  return new Date(value);
-}
-
-function dateKey(date){
-
-  const d=new Date(date);
-
-  return d.getFullYear()+"-"+
-  String(d.getMonth()+1).padStart(2,"0")+"-"+
-  String(d.getDate()).padStart(2,"0");
 }
 
 
-/* =========================
-   تسجيل الحساب
-========================= */
+function esc(v){
 
-function usernameEmail(username){
+return String(v??"")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
-  /*
-    Firebase Authentication يحتاج Email.
-    المستخدم لا يرى هذا البريد.
-    تسجيل الدخول يتم فقط باسم المستخدم وكلمة المرور.
-  */
-
-  return username.toLowerCase()
-  .replace(/[^a-z0-9._-]/g,"_")
-  +"@nexo-hisabi.local";
 }
 
+
+function toast(text,error=false){
+
+const x=document.createElement("div");
+
+x.className="toast"+(error?" error":"");
+
+x.textContent=text;
+
+$("toast").appendChild(x);
+
+setTimeout(()=>x.remove(),3000);
+
+}
+
+
+function userRef(){
+
+return doc(
+db,
+"users",
+currentUser.uid
+);
+
+}
+
+
+function userCol(name){
+
+return collection(
+db,
+"users",
+currentUser.uid,
+name
+);
+
+}
+
+
+function dateOf(value){
+
+if(!value)return new Date();
+
+if(typeof value.toDate==="function"){
+return value.toDate();
+}
+
+if(value.seconds){
+return new Date(value.seconds*1000);
+}
+
+return new Date(value);
+
+}
+
+
+function dayKey(date){
+
+date=new Date(date);
+
+return date.getFullYear()+"-"+
+String(date.getMonth()+1).padStart(2,"0")+"-"+
+String(date.getDate()).padStart(2,"0");
+
+}
+
+
+/*
+=========================================================
+اسم المستخدم + كلمة المرور
+المستخدم لا يحتاج كتابة بريد إلكتروني.
+=========================================================
+*/
+
+function internalEmail(username){
+
+return username
+.toLowerCase()
+.replace(/[^a-z0-9_-]/g,"_")
++"@nexohisabi.firebaseapp.com";
+
+}
+
+
+/*
+=========================================================
+إظهار التسجيل
+=========================================================
+*/
 
 $("showRegister").onclick=()=>{
 
-  $("loginBox").classList.add("hidden");
+$("loginBox").classList.add("hidden");
 
-  $("registerBox").classList.remove("hidden");
+$("registerBox").classList.remove("hidden");
 
 };
+
 
 $("showLogin").onclick=()=>{
 
-  $("registerBox").classList.add("hidden");
+$("registerBox").classList.add("hidden");
 
-  $("loginBox").classList.remove("hidden");
+$("loginBox").classList.remove("hidden");
 
 };
 
+
+/*
+=========================================================
+إنشاء الحساب
+=========================================================
+*/
 
 $("registerBtn").onclick=async()=>{
 
-  const name=$("regName").value.trim();
+const name=$("regName").value.trim();
 
-  const username=$("regUsername").value.trim().toLowerCase();
+const username=$("regUsername").value.trim().toLowerCase();
 
-  const store=$("regStore").value.trim();
+const store=$("regStore").value.trim();
 
-  const password=$("regPassword").value;
+const password=$("regPassword").value;
 
-  const password2=$("regPassword2").value;
+const password2=$("regPassword2").value;
 
 
-  if(!name||!username||!password){
+$("registerError").innerHTML="";
 
-    $("registerError").innerHTML=
-    `<div class="error">أكمل جميع البيانات المطلوبة.</div>`;
 
-    return;
-  }
+if(!name){
 
+$("registerError").innerHTML=
+`<div class="error">اكتب الاسم.</div>`;
 
-  if(!/^[a-z0-9_-]{3,30}$/.test(username)){
-
-    $("registerError").innerHTML=
-    `<div class="error">
-      اسم المستخدم يجب أن يكون بالإنجليزية والأرقام و _ أو -
-      من 3 إلى 30 حرفًا.
-    </div>`;
-
-    return;
-  }
-
-
-  if(password!==password2){
-
-    $("registerError").innerHTML=
-    `<div class="error">كلمتا المرور غير متطابقتين.</div>`;
-
-    return;
-  }
-
-
-  try{
-
-    const usernameRef=
-    doc(db,"usernames",username);
-
-    const existing=
-    await getDoc(usernameRef);
-
-    if(existing.exists()){
-
-      $("registerError").innerHTML=
-      `<div class="error">اسم المستخدم مستخدم بالفعل.</div>`;
-
-      return;
-    }
-
-
-    const credential=
-    await createUserWithEmailAndPassword(
-      auth,
-      usernameEmail(username),
-      password
-    );
-
-
-    await setDoc(
-      doc(db,"users",credential.user.uid),
-      {
-        name:name,
-        username:username,
-        store:store,
-        phone:"",
-        createdAt:serverTimestamp()
-      }
-    );
-
-
-    await setDoc(
-      usernameRef,
-      {
-        uid:credential.user.uid
-      }
-    );
-
-
-    showToast("تم إنشاء الحساب بنجاح.");
-
-  }catch(error){
-
-    console.error(error);
-
-    $("registerError").innerHTML=
-    `<div class="error">${escapeHTML(error.message)}</div>`;
-
-  }
-
-};
-
-
-/* =========================
-   تسجيل الدخول
-========================= */
-
-$("loginBtn").onclick=async()=>{
-
-  const username=
-  $("loginUsername").value.trim().toLowerCase();
-
-  const password=
-  $("loginPassword").value;
-
-
-  if(!username||!password){
-
-    $("loginError").innerHTML=
-    `<div class="error">أدخل اسم المستخدم وكلمة المرور.</div>`;
-
-    return;
-  }
-
-
-  try{
-
-    const usernameDoc=
-    await getDoc(
-      doc(db,"usernames",username)
-    );
-
-
-    if(!usernameDoc.exists()){
-
-      throw new Error("بيانات الدخول غير صحيحة.");
-
-    }
-
-
-    await signInWithEmailAndPassword(
-      auth,
-      usernameEmail(username),
-      password
-    );
-
-
-  }catch(error){
-
-    $("loginError").innerHTML=
-    `<div class="error">اسم المستخدم أو كلمة المرور غير صحيحة.</div>`;
-
-  }
-
-};
-
-
-$("logoutBtn").onclick=()=>signOut(auth);
-
-
-/* =========================
-   تحميل البيانات
-========================= */
-
-async function loadData(){
-
-  const profileDoc=
-  await getDoc(userDocument());
-
-
-  if(profileDoc.exists()){
-
-    profile=profileDoc.data();
-
-  }else{
-
-    profile={
-      name:"",
-      username:"",
-      store:"",
-      phone:""
-    };
-
-  }
-
-
-  const productsSnapshot=
-  await getDocs(
-    query(
-      userCollection("products"),
-      orderBy("createdAt","desc")
-    )
-  );
-
-
-  const transactionsSnapshot=
-  await getDocs(
-    query(
-      userCollection("transactions"),
-      orderBy("createdAt","desc")
-    )
-  );
-
-
-  const expensesSnapshot=
-  await getDocs(
-    query(
-      userCollection("expenses"),
-      orderBy("createdAt","desc")
-    )
-  );
-
-
-  products=
-  productsSnapshot.docs.map(
-    item=>({
-      id:item.id,
-      ...item.data()
-    })
-  );
-
-
-  transactions=
-  transactionsSnapshot.docs.map(
-    item=>({
-      id:item.id,
-      ...item.data()
-    })
-  );
-
-
-  expenses=
-  expensesSnapshot.docs.map(
-    item=>({
-      id:item.id,
-      ...item.data()
-    })
-  );
-
-
-  renderAll();
+return;
 
 }
 
 
-/* =========================
-   التنقل
-========================= */
+if(!username){
 
-document.querySelectorAll(".nav").forEach(button=>{
+$("registerError").innerHTML=
+`<div class="error">اكتب اسم المستخدم.</div>`;
 
-  button.onclick=()=>{
+return;
 
-    const page=button.dataset.page;
+}
 
-    document.querySelectorAll(".page")
-    .forEach(x=>x.classList.remove("active"));
 
-    $(page).classList.add("active");
+if(username.length<3){
 
-    document.querySelectorAll(".nav")
-    .forEach(x=>x.classList.remove("active"));
+$("registerError").innerHTML=
+`<div class="error">اسم المستخدم يجب أن يكون 3 أحرف على الأقل.</div>`;
 
-    button.classList.add("active");
+return;
 
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
+}
 
-  };
+
+if(password.length<6){
+
+$("registerError").innerHTML=
+`<div class="error">كلمة المرور يجب أن تكون 6 أحرف على الأقل.</div>`;
+
+return;
+
+}
+
+
+if(password!==password2){
+
+$("registerError").innerHTML=
+`<div class="error">تأكيد كلمة المرور غير مطابق.</div>`;
+
+return;
+
+}
+
+
+try{
+
+
+const usernameRef=
+doc(db,"usernames",username);
+
+
+const usernameCheck=
+await getDoc(usernameRef);
+
+
+if(usernameCheck.exists()){
+
+$("registerError").innerHTML=
+`<div class="error">اسم المستخدم موجود بالفعل.</div>`;
+
+return;
+
+}
+
+
+/*
+إنشاء الحساب الحقيقي في Firebase.
+*/
+
+const result=
+await createUserWithEmailAndPassword(
+auth,
+internalEmail(username),
+password
+);
+
+
+const uid=result.user.uid;
+
+
+/*
+حفظ بيانات المستخدم.
+*/
+
+await setDoc(
+doc(db,"users",uid),
+{
+name:name,
+username:username,
+store:store,
+phone:"",
+createdAt:serverTimestamp()
+}
+);
+
+
+/*
+ربط اسم المستخدم بالـ UID.
+*/
+
+await setDoc(
+usernameRef,
+{
+uid:uid
+}
+);
+
+
+/*
+يدخل مباشرة بعد التسجيل.
+*/
+
+$("registerBox").classList.add("hidden");
+
+$("loginBox").classList.remove("hidden");
+
+
+$("regName").value="";
+
+$("regUsername").value="";
+
+$("regStore").value="";
+
+$("regPassword").value="";
+
+$("regPassword2").value="";
+
+
+toast("تم إنشاء الحساب ودخولك للموقع.");
+
+
+}catch(error){
+
+console.error(error);
+
+let message="تعذر إنشاء الحساب.";
+
+if(error.code==="auth/email-already-in-use"){
+message="اسم المستخدم مستخدم بالفعل.";
+}
+
+if(error.code==="auth/invalid-email"){
+message="اسم المستخدم غير صالح.";
+}
+
+if(error.code==="auth/weak-password"){
+message="كلمة المرور ضعيفة.";
+}
+
+$("registerError").innerHTML=
+`<div class="error">${message}</div>`;
+
+}
+
+};
+
+
+/*
+=========================================================
+تسجيل الدخول
+=========================================================
+*/
+
+$("loginBtn").onclick=async()=>{
+
+const username=
+$("loginUsername").value.trim().toLowerCase();
+
+const password=
+$("loginPassword").value;
+
+
+$("loginError").innerHTML="";
+
+
+if(!username){
+
+$("loginError").innerHTML=
+`<div class="error">اكتب اسم المستخدم.</div>`;
+
+return;
+
+}
+
+
+if(!password){
+
+$("loginError").innerHTML=
+`<div class="error">اكتب كلمة المرور.</div>`;
+
+return;
+
+}
+
+
+try{
+
+
+/*
+البحث عن المستخدم من اسم المستخدم.
+*/
+
+const usernameDoc=
+await getDoc(
+doc(db,"usernames",username)
+);
+
+
+if(!usernameDoc.exists()){
+
+$("loginError").innerHTML=
+`<div class="error">اسم المستخدم أو كلمة المرور غير صحيحة.</div>`;
+
+return;
+
+}
+
+
+/*
+تسجيل الدخول الحقيقي.
+*/
+
+await signInWithEmailAndPassword(
+auth,
+internalEmail(username),
+password
+);
+
+
+/*
+onAuthStateChanged سيدخل الموقع تلقائياً.
+*/
+
+
+}catch(error){
+
+console.error(error);
+
+$("loginError").innerHTML=
+`<div class="error">اسم المستخدم أو كلمة المرور غير صحيحة.</div>`;
+
+}
+
+};
+
+
+/*
+=========================================================
+تسجيل الخروج
+=========================================================
+*/
+
+$("logoutBtn").onclick=async()=>{
+
+await signOut(auth);
+
+};
+
+
+/*
+=========================================================
+تحميل بيانات الحساب
+=========================================================
+*/
+
+async function loadData(){
+
+
+const profileSnap=
+await getDoc(userRef());
+
+
+if(profileSnap.exists()){
+
+profile={
+id:profileSnap.id,
+...profileSnap.data()
+};
+
+}else{
+
+profile={
+name:"",
+username:"",
+store:"",
+phone:""
+};
+
+}
+
+
+/*
+المنتجات
+*/
+
+const pSnap=
+await getDocs(
+query(
+userCol("products"),
+orderBy("createdAt","desc")
+)
+);
+
+products=
+pSnap.docs.map(x=>({
+id:x.id,
+...x.data()
+}));
+
+
+/*
+العمليات
+*/
+
+const tSnap=
+await getDocs(
+query(
+userCol("transactions"),
+orderBy("createdAt","desc")
+)
+);
+
+transactions=
+tSnap.docs.map(x=>({
+id:x.id,
+...x.data()
+}));
+
+
+/*
+المصاريف
+*/
+
+const eSnap=
+await getDocs(
+query(
+userCol("expenses"),
+orderBy("createdAt","desc")
+)
+);
+
+expenses=
+eSnap.docs.map(x=>({
+id:x.id,
+...x.data()
+}));
+
+
+renderAll();
+
+}
+
+
+/*
+=========================================================
+التنقل
+=========================================================
+*/
+
+document.querySelectorAll(".nav").forEach(btn=>{
+
+btn.onclick=()=>{
+
+const page=btn.dataset.page;
+
+
+document.querySelectorAll(".page")
+.forEach(x=>x.classList.remove("active"));
+
+
+$(page).classList.add("active");
+
+
+document.querySelectorAll(".nav")
+.forEach(x=>x.classList.remove("active"));
+
+
+btn.classList.add("active");
+
+};
 
 });
 
 
-document.querySelectorAll("[data-go]").forEach(button=>{
-
-  button.onclick=()=>{
-
-    const page=button.dataset.go;
-
-    document.querySelectorAll(".page")
-    .forEach(x=>x.classList.remove("active"));
-
-    $(page).classList.add("active");
-
-  };
-
-});
-
-
-/* =========================
-   Dashboard
-========================= */
+/*
+=========================================================
+الرئيسية
+=========================================================
+*/
 
 function renderDashboard(){
 
-  $("helloName").textContent=
-  profile.name||profile.username||"التاجر";
 
-  $("topUser").textContent=
-  "@"+(profile.username||"");
+$("helloName").textContent=
+profile.name||"التاجر";
 
 
-  const today=dateKey(new Date());
+$("topUser").textContent=
+"@"+(profile.username||"");
 
 
-  const todayTransactions=
-  transactions.filter(t=>
-    dateKey(timestampToDate(t.createdAt))===today
-  );
+const today=dayKey(new Date());
 
 
-  const todayExpenses=
-  expenses.filter(t=>
-    dateKey(timestampToDate(t.createdAt))===today
-  );
+const todayTx=
+transactions.filter(x=>
+dayKey(dateOf(x.createdAt))===today
+);
 
 
-  const sales=
-  todayTransactions
-  .filter(t=>t.type==="sale")
-  .reduce((sum,t)=>sum+Number(t.total||0),0);
+const todayEx=
+expenses.filter(x=>
+dayKey(dateOf(x.createdAt))===today
+);
 
 
-  const purchases=
-  todayTransactions
-  .filter(t=>t.type==="purchase")
-  .reduce((sum,t)=>sum+Number(t.total||0),0);
+const sales=
+todayTx
+.filter(x=>x.type==="sale")
+.reduce(
+(a,x)=>a+Number(x.total||0),
+0
+);
 
 
-  const cost=
-  todayTransactions
-  .filter(t=>t.type==="sale")
-  .reduce((sum,t)=>sum+Number(t.costTotal||0),0);
+const purchases=
+todayTx
+.filter(x=>x.type==="purchase")
+.reduce(
+(a,x)=>a+Number(x.total||0),
+0
+);
 
 
-  const expensesTotal=
-  todayExpenses
-  .reduce((sum,t)=>sum+Number(t.amount||0),0);
+const cost=
+todayTx
+.filter(x=>x.type==="sale")
+.reduce(
+(a,x)=>a+Number(x.costTotal||0),
+0
+);
 
 
-  $("todaySales").textContent=money(sales);
-
-  $("todayPurchases").textContent=money(purchases);
-
-  $("todayExpenses").textContent=money(expensesTotal);
-
-  $("todayProfit").textContent=
-  money(sales-cost-expensesTotal);
+const ex=
+todayEx.reduce(
+(a,x)=>a+Number(x.amount||0),
+0
+);
 
 
-  $("productCount").textContent=
-  products.length;
+$("todaySales").textContent=money(sales);
+
+$("todayPurchases").textContent=money(purchases);
+
+$("todayExpenses").textContent=money(ex);
+
+$("todayProfit").textContent=
+money(sales-cost-ex);
 
 
-  const low=
-  products.filter(
-    p=>Number(p.quantity||0)<=Number(p.minStock||0)
-  );
+$("productCount").textContent=
+products.length;
 
 
-  $("lowCount").textContent=
-  low.length;
+const low=
+products.filter(
+p=>Number(p.quantity||0)<=
+Number(p.minStock||0)
+);
 
 
-  $("alerts").innerHTML=
-  low.slice(0,5).map(p=>
-    `<div class="alert">
-      ⚠️ المنتج <b>${escapeHTML(p.name)}</b>
-      بقي منه ${Number(p.quantity||0)} قطعة فقط.
-    </div>`
-  ).join("");
+$("lowCount").textContent=
+low.length;
 
 
-  renderRecent();
+$("alerts").innerHTML=
+low.map(p=>`
+<div class="alert">
+⚠️ المنتج <b>${esc(p.name)}</b>
+المتبقي: ${p.quantity}
+</div>
+`).join("");
+
+
+renderRecent();
 
 }
 
 
 function renderRecent(){
 
-  const combined=[
 
-    ...transactions.map(x=>({
-      ...x,
-      rowType:"transaction"
-    })),
-
-    ...expenses.map(x=>({
-      ...x,
-      rowType:"expense"
-    }))
-
-  ]
-  .sort(
-    (a,b)=>
-    timestampToDate(b.createdAt)-
-    timestampToDate(a.createdAt)
-  )
-  .slice(0,10);
+const data=[
+...transactions.map(x=>({
+...x,
+kind:"transaction"
+})),
+...expenses.map(x=>({
+...x,
+kind:"expense"
+}))
+]
+.sort(
+(a,b)=>
+dateOf(b.createdAt)-
+dateOf(a.createdAt)
+)
+.slice(0,10);
 
 
-  if(!combined.length){
+if(!data.length){
 
-    $("recentTransactions").innerHTML=
-    `<p>لا توجد عمليات حتى الآن.</p>`;
+$("recentTransactions").innerHTML=
+"<p>لا توجد عمليات حتى الآن.</p>";
 
-    return;
-  }
-
-
-  $("recentTransactions").innerHTML=
-  `<table>
-
-    <thead>
-      <tr>
-        <th>النوع</th>
-        <th>التفاصيل</th>
-        <th>المبلغ</th>
-        <th>التاريخ</th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-    ${combined.map(item=>{
-
-      let type="";
-      let detail="";
-      let amount=0;
-
-
-      if(item.rowType==="expense"){
-
-        type="مصروف";
-        detail=escapeHTML(item.title);
-        amount=item.amount;
-
-      }else{
-
-        type=
-        item.type==="sale"
-        ?"بيع"
-        :"شراء";
-
-        detail=
-        `${escapeHTML(item.productName)}
-        × ${item.quantity}`;
-
-        amount=item.total;
-
-      }
-
-
-      return `
-      <tr>
-
-        <td>
-          <span class="badge">${type}</span>
-        </td>
-
-        <td>${detail}</td>
-
-        <td>${money(amount)}</td>
-
-        <td>
-        ${timestampToDate(item.createdAt).toLocaleString("ar-SA")}
-        </td>
-
-      </tr>`;
-
-    }).join("")}
-
-    </tbody>
-
-  </table>`;
+return;
 
 }
 
 
-/* =========================
-   المنتجات
-========================= */
+$("recentTransactions").innerHTML=`
+
+<table>
+
+<thead>
+
+<tr>
+<th>النوع</th>
+<th>التفاصيل</th>
+<th>المبلغ</th>
+<th>التاريخ</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${data.map(x=>{
+
+if(x.kind==="expense"){
+
+return `
+<tr>
+
+<td>
+<span class="badge">مصروف</span>
+</td>
+
+<td>${esc(x.title)}</td>
+
+<td>${money(x.amount)}</td>
+
+<td>${dateOf(x.createdAt).toLocaleString("ar-SA")}</td>
+
+</tr>`;
+
+}
+
+
+return `
+<tr>
+
+<td>
+<span class="badge">
+${x.type==="sale"?"بيع":"شراء"}
+</span>
+</td>
+
+<td>
+${esc(x.productName)}
+× ${x.quantity}
+</td>
+
+<td>${money(x.total)}</td>
+
+<td>${dateOf(x.createdAt).toLocaleString("ar-SA")}</td>
+
+</tr>`;
+
+}).join("")}
+
+</tbody>
+
+</table>`;
+
+}
+
+
+/*
+=========================================================
+المنتجات
+=========================================================
+*/
 
 $("addProductBtn").onclick=()=>openProduct();
 
 
-$("productSearch").oninput=renderProducts;
+$("productSearch").oninput=
+renderProducts;
 
 
 function renderProducts(){
 
-  const search=
-  $("productSearch").value.trim().toLowerCase();
+
+const search=
+$("productSearch").value.trim().toLowerCase();
 
 
-  const list=
-  products.filter(
-    p=>String(p.name)
-    .toLowerCase()
-    .includes(search)
-  );
+const list=
+products.filter(
+p=>String(p.name||"")
+.toLowerCase()
+.includes(search)
+);
 
 
-  if(!list.length){
+if(!list.length){
 
-    $("productsTable").innerHTML=
-    `<p>لا توجد منتجات.</p>`;
+$("productsTable").innerHTML=
+"<p>لا توجد منتجات.</p>";
 
-    return;
-  }
-
-
-  $("productsTable").innerHTML=
-  `<table>
-
-  <thead>
-
-  <tr>
-    <th>المنتج</th>
-    <th>الشراء</th>
-    <th>البيع</th>
-    <th>الكمية</th>
-    <th>ربح القطعة</th>
-    <th>الإجراءات</th>
-  </tr>
-
-  </thead>
-
-  <tbody>
-
-  ${list.map(p=>{
-
-    const profit=
-    Number(p.sellPrice||0)-
-    Number(p.buyPrice||0);
-
-
-    return `
-    <tr>
-
-      <td>
-        <b>${escapeHTML(p.name)}</b>
-        <br>
-        <small>${escapeHTML(p.category||"")}</small>
-      </td>
-
-      <td>${money(p.buyPrice)}</td>
-
-      <td>${money(p.sellPrice)}</td>
-
-      <td class="${
-        Number(p.quantity)<=Number(p.minStock)
-        ?"low"
-        :"good"
-      }">
-        ${p.quantity}
-      </td>
-
-      <td>${money(profit)}</td>
-
-      <td>
-
-        <button
-          class="small"
-          data-edit="${p.id}">
-          تعديل
-        </button>
-
-        <button
-          class="danger"
-          data-delete="${p.id}">
-          حذف
-        </button>
-
-      </td>
-
-    </tr>`;
-
-  }).join("")}
-
-  </tbody>
-
-  </table>`;
-
-
-  document.querySelectorAll("[data-edit]")
-  .forEach(button=>{
-
-    button.onclick=()=>
-    openProduct(button.dataset.edit);
-
-  });
-
-
-  document.querySelectorAll("[data-delete]")
-  .forEach(button=>{
-
-    button.onclick=()=>
-    deleteProduct(button.dataset.delete);
-
-  });
+return;
 
 }
 
 
-/* =========================
-   Modal
-========================= */
+$("productsTable").innerHTML=`
 
-$("closeModal").onclick=()=>
+<table>
+
+<thead>
+
+<tr>
+<th>المنتج</th>
+<th>الشراء</th>
+<th>البيع</th>
+<th>الكمية</th>
+<th>الربح</th>
+<th>الإجراء</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${list.map(p=>{
+
+const profit=
+Number(p.sellPrice||0)-
+Number(p.buyPrice||0);
+
+
+return `
+
+<tr>
+
+<td>
+<b>${esc(p.name)}</b>
+<br>
+<small>${esc(p.category||"")}</small>
+</td>
+
+<td>${money(p.buyPrice)}</td>
+
+<td>${money(p.sellPrice)}</td>
+
+<td class="${
+Number(p.quantity)<=Number(p.minStock)
+?"low":"good"
+}">
+${p.quantity}
+</td>
+
+<td>${money(profit)}</td>
+
+<td>
+
+<button
+class="small"
+data-edit-product="${p.id}">
+تعديل
+</button>
+
+<button
+class="danger"
+data-delete-product="${p.id}">
+حذف
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("")}
+
+</tbody>
+
+</table>
+`;
+
+
+document.querySelectorAll(
+"[data-edit-product]"
+).forEach(btn=>{
+
+btn.onclick=()=>
+openProduct(btn.dataset.editProduct);
+
+});
+
+
+document.querySelectorAll(
+"[data-delete-product]"
+).forEach(btn=>{
+
+btn.onclick=()=>
+deleteProduct(btn.dataset.deleteProduct);
+
+});
+
+}
+
+
+/*
+=========================================================
+إضافة / تعديل منتج
+=========================================================
+*/
+
+function openProduct(id=null){
+
+
+const p=
+id
+?products.find(x=>x.id===id)
+:{
+name:"",
+buyPrice:0,
+sellPrice:0,
+quantity:0,
+category:"",
+minStock:3,
+notes:""
+};
+
+
+$("modalBody").innerHTML=`
+
+<h3>${id?"تعديل المنتج":"إضافة منتج"}</h3>
+
+<label>
+اسم المنتج
+<input id="mName" value="${esc(p.name)}">
+</label>
+
+<label>
+سعر الشراء
+<input id="mBuy" type="number"
+step="0.01"
+value="${p.buyPrice}">
+</label>
+
+<label>
+سعر البيع
+<input id="mSell" type="number"
+step="0.01"
+value="${p.sellPrice}">
+</label>
+
+<label>
+الكمية
+<input id="mQty" type="number"
+min="0"
+value="${p.quantity}">
+</label>
+
+<label>
+القسم
+<input id="mCategory"
+value="${esc(p.category||"")}">
+</label>
+
+<label>
+الحد الأدنى للمخزون
+<input id="mMin"
+type="number"
+min="0"
+value="${p.minStock??3}">
+</label>
+
+<label>
+ملاحظات
+<textarea id="mNotes">${esc(p.notes||"")}</textarea>
+</label>
+
+<div class="modal-actions">
+
+<button class="primary" id="saveProduct">
+حفظ
+</button>
+
+<button class="secondary" id="cancelModal">
+إلغاء
+</button>
+
+</div>
+`;
+
+
+$("modal").classList.remove("hidden");
+
+
+$("cancelModal").onclick=()=>
 $("modal").classList.add("hidden");
 
 
-$("modal").onclick=e=>{
+$("saveProduct").onclick=async()=>{
 
-  if(e.target.id==="modal"){
 
-    $("modal").classList.add("hidden");
+const data={
 
-  }
+name:$("mName").value.trim(),
+
+buyPrice:Number($("mBuy").value||0),
+
+sellPrice:Number($("mSell").value||0),
+
+quantity:Number($("mQty").value||0),
+
+category:$("mCategory").value.trim(),
+
+minStock:Number($("mMin").value||0),
+
+notes:$("mNotes").value.trim(),
+
+updatedAt:serverTimestamp()
 
 };
 
 
-function openProduct(id=null){
+if(!data.name){
 
-  const product=
-  id
-  ?products.find(x=>x.id===id)
-  :{
-    name:"",
-    buyPrice:0,
-    sellPrice:0,
-    quantity:0,
-    category:"",
-    minStock:3,
-    notes:""
-  };
+toast("اكتب اسم المنتج.",true);
+
+return;
+
+}
 
 
-  $("modalBody").innerHTML=`
+if(id){
 
-  <h3>${id?"تعديل المنتج":"إضافة منتج جديد"}</h3>
+await updateDoc(
+doc(userCol("products"),id),
+data
+);
 
-  <label>
-    اسم المنتج
-    <input id="mName"
-      value="${escapeHTML(product.name)}">
-  </label>
+}else{
 
-  <label>
-    سعر الشراء
-    <input id="mBuy"
-      type="number"
-      step="0.01"
-      value="${product.buyPrice}">
-  </label>
+await addDoc(
+userCol("products"),
+{
+...data,
+createdAt:serverTimestamp()
+}
+);
 
-  <label>
-    سعر البيع
-    <input id="mSell"
-      type="number"
-      step="0.01"
-      value="${product.sellPrice}">
-  </label>
-
-  <label>
-    الكمية
-    <input id="mQty"
-      type="number"
-      min="0"
-      value="${product.quantity}">
-  </label>
-
-  <label>
-    القسم
-    <input id="mCategory"
-      value="${escapeHTML(product.category||"")}">
-  </label>
-
-  <label>
-    أقل كمية للمخزون
-    <input id="mMin"
-      type="number"
-      min="0"
-      value="${product.minStock??3}">
-  </label>
-
-  <label>
-    ملاحظات
-    <textarea id="mNotes">${escapeHTML(product.notes||"")}</textarea>
-  </label>
-
-  <div class="modal-actions">
-
-    <button class="primary" id="saveProduct">
-      ${id?"حفظ التعديل":"إضافة المنتج"}
-    </button>
-
-    <button class="secondary" id="cancelProduct">
-      إلغاء
-    </button>
-
-  </div>`;
+}
 
 
-  $("modal").classList.remove("hidden");
+$("modal").classList.add("hidden");
 
+await loadData();
 
-  $("cancelProduct").onclick=()=>
-  $("modal").classList.add("hidden");
+toast("تم حفظ المنتج.");
 
-
-  $("saveProduct").onclick=async()=>{
-
-    const data={
-
-      name:$("mName").value.trim(),
-
-      buyPrice:Number($("mBuy").value||0),
-
-      sellPrice:Number($("mSell").value||0),
-
-      quantity:Number($("mQty").value||0),
-
-      category:$("mCategory").value.trim(),
-
-      minStock:Number($("mMin").value||0),
-
-      notes:$("mNotes").value.trim(),
-
-      updatedAt:serverTimestamp()
-
-    };
-
-
-    if(!data.name){
-
-      showToast("اكتب اسم المنتج.",true);
-
-      return;
-    }
-
-
-    if(data.buyPrice<0||
-       data.sellPrice<0||
-       data.quantity<0){
-
-      showToast("القيم لا يمكن أن تكون سالبة.",true);
-
-      return;
-    }
-
-
-    if(id){
-
-      await updateDoc(
-        doc(userCollection("products"),id),
-        data
-      );
-
-    }else{
-
-      await addDoc(
-        userCollection("products"),
-        {
-          ...data,
-          createdAt:serverTimestamp()
-        }
-      );
-
-    }
-
-
-    $("modal").classList.add("hidden");
-
-    await loadData();
-
-    showToast("تم حفظ المنتج.");
-
-  };
+};
 
 }
 
 
 async function deleteProduct(id){
 
-  if(!confirm("هل تريد حذف هذا المنتج؟"))return;
+if(!confirm("هل تريد حذف المنتج؟"))return;
 
 
-  await deleteDoc(
-    doc(userCollection("products"),id)
-  );
+await deleteDoc(
+doc(userCol("products"),id)
+);
 
 
-  await loadData();
+await loadData();
 
-  showToast("تم حذف المنتج.");
+toast("تم حذف المنتج.");
+
+}
+
+
+/*
+=========================================================
+اختيارات المنتجات
+=========================================================
+*/
+
+function fillProducts(){
+
+
+const html=
+products.map(p=>`
+
+<option value="${p.id}">
+${esc(p.name)}
+ — ${p.quantity} قطعة
+</option>
+
+`).join("");
+
+
+$("saleProduct").innerHTML=html;
+
+$("purchaseProduct").innerHTML=html;
+
+
+updateSale();
+
+updatePurchase();
 
 }
 
 
-/* =========================
-   البيع
-========================= */
-
-function fillProductSelects(){
-
-  const options=
-  products.map(p=>
-    `<option value="${p.id}">
-      ${escapeHTML(p.name)}
-      — ${p.quantity} قطعة
-    </option>`
-  ).join("");
-
-
-  $("saleProduct").innerHTML=options;
-
-  $("purchaseProduct").innerHTML=options;
-
-
-  updateSale();
-
-  updatePurchase();
-
-}
-
+/*
+=========================================================
+بيع
+=========================================================
+*/
 
 $("saleProduct").onchange=updateSale;
 
@@ -1976,145 +2217,135 @@ $("salePrice").oninput=updateSale;
 
 function updateSale(){
 
-  const product=
-  products.find(
-    p=>p.id===$("saleProduct").value
-  );
+
+const p=
+products.find(
+x=>x.id===$("saleProduct").value
+);
 
 
-  if(!product){
+if(!p){
 
-    $("salePrice").value=0;
+$("salePrice").value=0;
 
-    $("saleTotal").textContent=
-    money(0);
+$("saleTotal").textContent=money(0);
 
-    return;
-  }
+return;
 
-
-  if(
-    document.activeElement!==$("salePrice")
-  ){
-
-    $("salePrice").value=
-    Number(product.sellPrice||0);
-
-  }
+}
 
 
-  const quantity=
-  Number($("saleQty").value||0);
+if(
+document.activeElement!==
+$("salePrice")
+){
+
+$("salePrice").value=
+p.sellPrice||0;
+
+}
 
 
-  $("saleTotal").textContent=
-  money(
-    quantity*
-    Number($("salePrice").value||0)
-  );
+const qty=
+Number($("saleQty").value||0);
+
+const price=
+Number($("salePrice").value||0);
+
+
+$("saleTotal").textContent=
+money(qty*price);
 
 }
 
 
 $("saveSale").onclick=async()=>{
 
-  const product=
-  products.find(
-    p=>p.id===$("saleProduct").value
-  );
+
+const p=
+products.find(
+x=>x.id===$("saleProduct").value
+);
 
 
-  const quantity=
-  Number($("saleQty").value||0);
+const qty=
+Number($("saleQty").value||0);
 
 
-  const price=
-  Number($("salePrice").value||0);
+const price=
+Number($("salePrice").value||0);
 
 
-  if(!product){
+if(!p){
 
-    showToast("اختر منتجًا.",true);
+toast("اختر المنتج.",true);
 
-    return;
-  }
+return;
 
-
-  if(quantity<=0){
-
-    showToast("أدخل كمية صحيحة.",true);
-
-    return;
-  }
+}
 
 
-  if(quantity>Number(product.quantity)){
+if(qty<=0){
 
-    showToast(
-      "الكمية المطلوبة أكبر من المخزون.",
-      true
-    );
+toast("أدخل كمية صحيحة.",true);
 
-    return;
-  }
+return;
+
+}
 
 
-  const total=quantity*price;
+if(qty>Number(p.quantity)){
 
-  const costTotal=
-  quantity*Number(product.buyPrice||0);
+toast("الكمية أكبر من المخزون.",true);
 
+return;
 
-  const batch=writeBatch(db);
-
-
-  batch.update(
-    doc(
-      userCollection("products"),
-      product.id
-    ),
-    {
-      quantity:
-      Number(product.quantity)-quantity,
-
-      updatedAt:serverTimestamp()
-    }
-  );
+}
 
 
-  const transactionRef=
-  doc(userCollection("transactions"));
+const batch=writeBatch(db);
 
 
-  batch.set(
-    transactionRef,
-    {
-      type:"sale",
-      productId:product.id,
-      productName:product.name,
-      quantity:quantity,
-      unitPrice:price,
-      total:total,
-      costTotal:costTotal,
-      createdAt:serverTimestamp()
-    }
-  );
+batch.update(
+doc(userCol("products"),p.id),
+{
+quantity:
+Number(p.quantity)-qty,
+updatedAt:serverTimestamp()
+}
+);
 
 
-  await batch.commit();
+batch.set(
+doc(userCol("transactions")),
+{
+type:"sale",
+productId:p.id,
+productName:p.name,
+quantity:qty,
+unitPrice:price,
+total:qty*price,
+costTotal:
+qty*Number(p.buyPrice||0),
+createdAt:serverTimestamp()
+}
+);
 
 
-  await loadData();
+await batch.commit();
 
+await loadData();
 
-  showToast("تم تسجيل البيع بنجاح.");
+toast("تم تسجيل البيع.");
 
 };
 
 
-/* =========================
-   الشراء
-========================= */
+/*
+=========================================================
+شراء
+=========================================================
+*/
 
 $("purchaseProduct").onchange=
 updatePurchase;
@@ -2128,1027 +2359,1040 @@ updatePurchase;
 
 function updatePurchase(){
 
-  const product=
-  products.find(
-    p=>p.id===$("purchaseProduct").value
-  );
+
+const p=
+products.find(
+x=>x.id===$("purchaseProduct").value
+);
 
 
-  if(!product){
+if(!p){
 
-    $("purchasePrice").value=0;
+$("purchasePrice").value=0;
 
-    $("purchaseTotal").textContent=
-    money(0);
+$("purchaseTotal").textContent=money(0);
 
-    return;
-  }
+return;
 
-
-  if(
-    document.activeElement!==
-    $("purchasePrice")
-  ){
-
-    $("purchasePrice").value=
-    Number(product.buyPrice||0);
-
-  }
+}
 
 
-  const quantity=
-  Number($("purchaseQty").value||0);
+if(
+document.activeElement!==
+$("purchasePrice")
+){
+
+$("purchasePrice").value=
+p.buyPrice||0;
+
+}
 
 
-  $("purchaseTotal").textContent=
-  money(
-    quantity*
-    Number($("purchasePrice").value||0)
-  );
+const qty=
+Number($("purchaseQty").value||0);
+
+const price=
+Number($("purchasePrice").value||0);
+
+
+$("purchaseTotal").textContent=
+money(qty*price);
 
 }
 
 
 $("savePurchase").onclick=async()=>{
 
-  const product=
-  products.find(
-    p=>p.id===$("purchaseProduct").value
-  );
+
+const p=
+products.find(
+x=>x.id===$("purchaseProduct").value
+);
 
 
-  const quantity=
-  Number($("purchaseQty").value||0);
+const qty=
+Number($("purchaseQty").value||0);
 
 
-  const price=
-  Number($("purchasePrice").value||0);
+const price=
+Number($("purchasePrice").value||0);
 
 
-  if(!product){
+if(!p){
 
-    showToast("اختر منتجًا.",true);
+toast("اختر المنتج.",true);
 
-    return;
-  }
+return;
 
-
-  if(quantity<=0){
-
-    showToast("أدخل كمية صحيحة.",true);
-
-    return;
-  }
+}
 
 
-  const batch=writeBatch(db);
+if(qty<=0){
+
+toast("أدخل كمية صحيحة.",true);
+
+return;
+
+}
 
 
-  batch.update(
-    doc(
-      userCollection("products"),
-      product.id
-    ),
-    {
-      quantity:
-      Number(product.quantity)+quantity,
-
-      buyPrice:price,
-
-      updatedAt:serverTimestamp()
-    }
-  );
+const batch=writeBatch(db);
 
 
-  batch.set(
-    doc(userCollection("transactions")),
-    {
-      type:"purchase",
-      productId:product.id,
-      productName:product.name,
-      quantity:quantity,
-      unitPrice:price,
-      total:quantity*price,
-      createdAt:serverTimestamp()
-    }
-  );
+batch.update(
+doc(userCol("products"),p.id),
+{
+quantity:
+Number(p.quantity)+qty,
+buyPrice:price,
+updatedAt:serverTimestamp()
+}
+);
 
 
-  await batch.commit();
+batch.set(
+doc(userCol("transactions")),
+{
+type:"purchase",
+productId:p.id,
+productName:p.name,
+quantity:qty,
+unitPrice:price,
+total:qty*price,
+createdAt:serverTimestamp()
+}
+);
 
-  await loadData();
 
-  showToast("تم تسجيل الشراء بنجاح.");
+await batch.commit();
+
+await loadData();
+
+toast("تم تسجيل الشراء.");
 
 };
 
 
-/* =========================
-   المصاريف
-========================= */
+/*
+=========================================================
+المصاريف
+=========================================================
+*/
 
 $("addExpenseBtn").onclick=()=>{
 
-  $("modalBody").innerHTML=`
 
-  <h3>إضافة مصروف</h3>
+$("modalBody").innerHTML=`
 
-  <label>
-    نوع المصروف
-    <input id="expenseTitle"
-      placeholder="توصيل، إيجار، كهرباء...">
-  </label>
+<h3>إضافة مصروف</h3>
 
-  <label>
-    المبلغ
-    <input id="expenseAmount"
-      type="number"
-      min="0"
-      step="0.01">
-  </label>
+<label>
+نوع المصروف
+<select id="expenseTitle">
 
-  <label>
-    ملاحظات
-    <textarea id="expenseNotes"></textarea>
-  </label>
+<option>إيجار</option>
+<option>توصيل</option>
+<option>كهرباء</option>
+<option>إنترنت</option>
+<option>تغليف</option>
+<option>رواتب</option>
+<option>صيانة</option>
+<option>أخرى</option>
 
-  <button class="primary" id="saveExpense">
-    حفظ المصروف
-  </button>`;
+</select>
+</label>
 
+<label>
+المبلغ
+<input id="expenseAmount"
+type="number"
+min="0"
+step="0.01">
+</label>
 
-  $("modal").classList.remove("hidden");
+<label>
+ملاحظات
+<textarea id="expenseNotes"></textarea>
+</label>
 
-
-  $("saveExpense").onclick=async()=>{
-
-    const title=
-    $("expenseTitle").value.trim();
-
-    const amount=
-    Number($("expenseAmount").value||0);
-
-    const notes=
-    $("expenseNotes").value.trim();
+<button class="primary" id="saveExpense">
+حفظ المصروف
+</button>
+`;
 
 
-    if(!title||amount<=0){
-
-      showToast(
-        "أدخل نوع المصروف والمبلغ.",
-        true
-      );
-
-      return;
-    }
+$("modal").classList.remove("hidden");
 
 
-    await addDoc(
-      userCollection("expenses"),
-      {
-        title:title,
-        amount:amount,
-        notes:notes,
-        createdAt:serverTimestamp()
-      }
-    );
+$("saveExpense").onclick=async()=>{
 
 
-    $("modal").classList.add("hidden");
+const title=
+$("expenseTitle").value;
 
-    await loadData();
+const amount=
+Number($("expenseAmount").value||0);
 
-    showToast("تم تسجيل المصروف.");
+const notes=
+$("expenseNotes").value.trim();
 
-  };
+
+if(amount<=0){
+
+toast("أدخل المبلغ.",true);
+
+return;
+
+}
+
+
+await addDoc(
+userCol("expenses"),
+{
+title,
+amount,
+notes,
+createdAt:serverTimestamp()
+}
+);
+
+
+$("modal").classList.add("hidden");
+
+await loadData();
+
+toast("تم تسجيل المصروف.");
 
 };
 
+};
+
+
+/*
+=========================================================
+عرض المصاريف
+=========================================================
+*/
 
 function renderExpenses(){
 
-  if(!expenses.length){
 
-    $("expensesTable").innerHTML=
-    `<p>لا توجد مصاريف.</p>`;
+if(!expenses.length){
 
-    return;
-  }
+$("expensesTable").innerHTML=
+"<p>لا توجد مصاريف.</p>";
 
-
-  $("expensesTable").innerHTML=
-  `<table>
-
-  <thead>
-  <tr>
-    <th>المصروف</th>
-    <th>المبلغ</th>
-    <th>التاريخ</th>
-    <th>إجراء</th>
-  </tr>
-  </thead>
-
-  <tbody>
-
-  ${expenses.map(e=>`
-
-  <tr>
-
-    <td>${escapeHTML(e.title)}</td>
-
-    <td>${money(e.amount)}</td>
-
-    <td>
-    ${timestampToDate(e.createdAt).toLocaleString("ar-SA")}
-    </td>
-
-    <td>
-      <button
-        class="danger"
-        data-expense-delete="${e.id}">
-        حذف
-      </button>
-    </td>
-
-  </tr>
-
-  `).join("")}
-
-  </tbody>
-
-  </table>`;
-
-
-  document.querySelectorAll(
-    "[data-expense-delete]"
-  ).forEach(button=>{
-
-    button.onclick=async()=>{
-
-      if(!confirm("حذف المصروف؟"))return;
-
-
-      await deleteDoc(
-        doc(
-          userCollection("expenses"),
-          button.dataset.expenseDelete
-        )
-      );
-
-
-      await loadData();
-
-      showToast("تم حذف المصروف.");
-
-    };
-
-  });
+return;
 
 }
 
 
-/* =========================
-   المخزون
-========================= */
+$("expensesTable").innerHTML=`
+
+<table>
+
+<thead>
+
+<tr>
+<th>النوع</th>
+<th>المبلغ</th>
+<th>التاريخ</th>
+<th>إجراء</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${expenses.map(e=>`
+
+<tr>
+
+<td>${esc(e.title)}</td>
+
+<td>${money(e.amount)}</td>
+
+<td>
+${dateOf(e.createdAt).toLocaleString("ar-SA")}
+</td>
+
+<td>
+
+<button
+class="danger"
+data-delete-expense="${e.id}">
+حذف
+</button>
+
+</td>
+
+</tr>
+
+`).join("")}
+
+</tbody>
+
+</table>
+`;
+
+
+document.querySelectorAll(
+"[data-delete-expense]"
+).forEach(btn=>{
+
+btn.onclick=async()=>{
+
+if(!confirm("حذف المصروف؟"))return;
+
+await deleteDoc(
+doc(
+userCol("expenses"),
+btn.dataset.deleteExpense
+)
+);
+
+await loadData();
+
+toast("تم حذف المصروف.");
+
+};
+
+});
+
+}
+
+
+/*
+=========================================================
+المخزون
+=========================================================
+*/
 
 function renderInventory(){
 
-  if(!products.length){
 
-    $("inventoryTable").innerHTML=
-    `<p>لا توجد منتجات.</p>`;
+if(!products.length){
 
-    return;
-  }
+$("inventoryTable").innerHTML=
+"<p>لا توجد منتجات.</p>";
 
-
-  $("inventoryTable").innerHTML=
-  `<table>
-
-  <thead>
-
-  <tr>
-    <th>المنتج</th>
-    <th>الكمية</th>
-    <th>الحد الأدنى</th>
-    <th>الشراء</th>
-    <th>البيع</th>
-    <th>قيمة المخزون</th>
-    <th>الحالة</th>
-  </tr>
-
-  </thead>
-
-  <tbody>
-
-  ${products.map(p=>{
-
-    const low=
-    Number(p.quantity)<=
-    Number(p.minStock);
-
-
-    return `
-    <tr>
-
-      <td>${escapeHTML(p.name)}</td>
-
-      <td>${p.quantity}</td>
-
-      <td>${p.minStock}</td>
-
-      <td>${money(p.buyPrice)}</td>
-
-      <td>${money(p.sellPrice)}</td>
-
-      <td>
-      ${money(
-        Number(p.quantity)*
-        Number(p.buyPrice)
-      )}
-      </td>
-
-      <td>
-      ${
-        low
-        ?'<span class="low">⚠️ مخزون منخفض</span>'
-        :'<span class="good">جيد</span>'
-      }
-      </td>
-
-    </tr>`;
-
-  }).join("")}
-
-  </tbody>
-
-  </table>`;
+return;
 
 }
 
 
-/* =========================
-   التقارير
-========================= */
+$("inventoryTable").innerHTML=`
+
+<table>
+
+<thead>
+
+<tr>
+<th>المنتج</th>
+<th>الكمية</th>
+<th>الحد الأدنى</th>
+<th>سعر الشراء</th>
+<th>سعر البيع</th>
+<th>قيمة المخزون</th>
+<th>الحالة</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${products.map(p=>{
+
+const low=
+Number(p.quantity)<=
+Number(p.minStock);
+
+
+return `
+
+<tr>
+
+<td>${esc(p.name)}</td>
+
+<td>${p.quantity}</td>
+
+<td>${p.minStock}</td>
+
+<td>${money(p.buyPrice)}</td>
+
+<td>${money(p.sellPrice)}</td>
+
+<td>
+${money(
+Number(p.quantity)*
+Number(p.buyPrice)
+)}
+</td>
+
+<td>
+${
+low
+?'<span class="low">⚠️ منخفض</span>'
+:'<span class="good">جيد</span>'
+}
+</td>
+
+</tr>
+
+`;
+
+}).join("")}
+
+</tbody>
+
+</table>
+`;
+
+}
+
+
+/*
+=========================================================
+التقارير
+=========================================================
+*/
 
 $("reportPeriod").onchange=()=>{
 
-  const custom=
-  $("reportPeriod").value==="custom";
+const custom=
+$("reportPeriod").value==="custom";
 
+$("reportFrom")
+.classList.toggle("hidden",!custom);
 
-  $("reportFrom")
-  .classList.toggle("hidden",!custom);
-
-  $("reportTo")
-  .classList.toggle("hidden",!custom);
+$("reportTo")
+.classList.toggle("hidden",!custom);
 
 };
+
+
+function reportRange(){
+
+
+const type=
+$("reportPeriod").value;
+
+
+const now=new Date();
+
+now.setHours(0,0,0,0);
+
+
+if(type==="today"){
+
+return [
+now,
+new Date(now.getTime()+86400000-1)
+];
+
+}
+
+
+if(type==="yesterday"){
+
+const start=
+new Date(now.getTime()-86400000);
+
+return [
+start,
+new Date(now.getTime()-1)
+];
+
+}
+
+
+if(type==="week"){
+
+const day=
+(now.getDay()+6)%7;
+
+const start=
+new Date(
+now.getTime()-day*86400000
+);
+
+return [
+start,
+new Date(
+start.getTime()+7*86400000-1
+)
+];
+
+}
+
+
+if(type==="month"){
+
+const start=
+new Date(
+now.getFullYear(),
+now.getMonth(),
+1
+);
+
+const next=
+new Date(
+now.getFullYear(),
+now.getMonth()+1,
+1
+);
+
+return [
+start,
+new Date(next.getTime()-1)
+];
+
+}
+
+
+const start=
+new Date(
+$("reportFrom").value+
+"T00:00:00"
+);
+
+const end=
+new Date(
+($("reportTo").value||
+$("reportFrom").value)+
+"T23:59:59"
+);
+
+return [start,end];
+
+}
 
 
 $("runReport").onclick=renderReports;
 
 
-function reportRange(){
-
-  const type=
-  $("reportPeriod").value;
-
-
-  const today=
-  new Date();
-
-  today.setHours(0,0,0,0);
-
-
-  if(type==="today"){
-
-    return [
-      today,
-      new Date(
-        today.getTime()+86400000-1
-      )
-    ];
-
-  }
-
-
-  if(type==="yesterday"){
-
-    const start=
-    new Date(
-      today.getTime()-86400000
-    );
-
-    return [
-      start,
-      new Date(today.getTime()-1)
-    ];
-
-  }
-
-
-  if(type==="week"){
-
-    const day=
-    (today.getDay()+6)%7;
-
-    const start=
-    new Date(
-      today.getTime()-
-      day*86400000
-    );
-
-    return [
-      start,
-      new Date(
-        start.getTime()+
-        7*86400000-1
-      )
-    ];
-
-  }
-
-
-  if(type==="month"){
-
-    const start=
-    new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      1
-    );
-
-    const next=
-    new Date(
-      today.getFullYear(),
-      today.getMonth()+1,
-      1
-    );
-
-    return [
-      start,
-      new Date(next.getTime()-1)
-    ];
-
-  }
-
-
-  const start=
-  new Date(
-    $("reportFrom").value+
-    "T00:00:00"
-  );
-
-
-  const end=
-  new Date(
-    (
-      $("reportTo").value||
-      $("reportFrom").value
-    )+
-    "T23:59:59"
-  );
-
-
-  return [start,end];
-
-}
-
-
 function renderReports(){
 
-  const [start,end]=reportRange();
+
+const [start,end]=reportRange();
 
 
-  if(
-    isNaN(start.getTime())||
-    isNaN(end.getTime())
-  ){
-
-    return;
-  }
+if(isNaN(start)||isNaN(end))return;
 
 
-  const tx=
-  transactions.filter(t=>{
+const tx=
+transactions.filter(x=>{
 
-    const date=
-    timestampToDate(t.createdAt);
+const d=dateOf(x.createdAt);
 
-    return date>=start&&date<=end;
+return d>=start&&d<=end;
 
-  });
-
-
-  const ex=
-  expenses.filter(e=>{
-
-    const date=
-    timestampToDate(e.createdAt);
-
-    return date>=start&&date<=end;
-
-  });
-
-
-  const sales=
-  tx.filter(t=>t.type==="sale");
-
-
-  const purchases=
-  tx.filter(t=>t.type==="purchase");
-
-
-  const salesTotal=
-  sales.reduce(
-    (sum,t)=>
-    sum+Number(t.total||0),
-    0
-  );
-
-
-  const purchasesTotal=
-  purchases.reduce(
-    (sum,t)=>
-    sum+Number(t.total||0),
-    0
-  );
-
-
-  const cost=
-  sales.reduce(
-    (sum,t)=>
-    sum+Number(t.costTotal||0),
-    0
-  );
-
-
-  const expenseTotal=
-  ex.reduce(
-    (sum,e)=>
-    sum+Number(e.amount||0),
-    0
-  );
-
-
-  const profit=
-  salesTotal-
-  cost-
-  expenseTotal;
-
-
-  $("rSales").textContent=
-  money(salesTotal);
-
-  $("rPurchases").textContent=
-  money(purchasesTotal);
-
-  $("rExpenses").textContent=
-  money(expenseTotal);
-
-  $("rCost").textContent=
-  money(cost);
-
-  $("rProfit").textContent=
-  money(profit);
-
-  $("rQty").textContent=
-  sales.reduce(
-    (sum,t)=>
-    sum+Number(t.quantity||0),
-    0
-  );
-
-
-  const best={};
-
-
-  sales.forEach(t=>{
-
-    best[t.productName]=
-    (best[t.productName]||0)+
-    Number(t.quantity||0);
-
-  });
-
-
-  const top=
-  Object.entries(best)
-  .sort((a,b)=>b[1]-a[1])
-  .slice(0,10);
-
-
-  if(!top.length){
-
-    $("topProducts").innerHTML=
-    `<p>لا توجد مبيعات في الفترة المحددة.</p>`;
-
-    return;
-  }
-
-
-  $("topProducts").innerHTML=
-  `<table>
-
-  <thead>
-  <tr>
-    <th>المنتج</th>
-    <th>الكمية المباعة</th>
-  </tr>
-  </thead>
-
-  <tbody>
-
-  ${top.map(item=>`
-
-    <tr>
-      <td>${escapeHTML(item[0])}</td>
-      <td>${item[1]}</td>
-    </tr>
-
-  `).join("")}
-
-  </tbody>
-
-  </table>`;
-
-}
-
-
-/* =========================
-   الحاسبة
-========================= */
-
-["cBuy","cSell","cQty"]
-.forEach(id=>{
-  $(id).oninput=calculator;
 });
 
 
-function calculator(){
+const ex=
+expenses.filter(x=>{
 
-  const buy=
-  Number($("cBuy").value||0);
+const d=dateOf(x.createdAt);
 
-  const sell=
-  Number($("cSell").value||0);
+return d>=start&&d<=end;
 
-  const quantity=
-  Number($("cQty").value||0);
+});
 
 
-  $("cTotalBuy").textContent=
-  money(buy*quantity);
+const sales=
+tx.filter(x=>x.type==="sale");
+
+const purchases=
+tx.filter(x=>x.type==="purchase");
 
 
-  $("cTotalSell").textContent=
-  money(sell*quantity);
+const salesTotal=
+sales.reduce(
+(a,x)=>a+Number(x.total||0),
+0
+);
 
 
-  $("cProfit").textContent=
-  money((sell-buy)*quantity);
+const purchaseTotal=
+purchases.reduce(
+(a,x)=>a+Number(x.total||0),
+0
+);
+
+
+const cost=
+sales.reduce(
+(a,x)=>a+Number(x.costTotal||0),
+0
+);
+
+
+const expenseTotal=
+ex.reduce(
+(a,x)=>a+Number(x.amount||0),
+0
+);
+
+
+$("rSales").textContent=
+money(salesTotal);
+
+$("rPurchases").textContent=
+money(purchaseTotal);
+
+$("rExpenses").textContent=
+money(expenseTotal);
+
+$("rCost").textContent=
+money(cost);
+
+$("rProfit").textContent=
+money(
+salesTotal-cost-expenseTotal
+);
+
+
+$("rQty").textContent=
+sales.reduce(
+(a,x)=>a+Number(x.quantity||0),
+0
+);
+
+
+const best={};
+
+
+sales.forEach(x=>{
+
+best[x.productName]=
+(best[x.productName]||0)+
+Number(x.quantity||0);
+
+});
+
+
+const list=
+Object.entries(best)
+.sort((a,b)=>b[1]-a[1]);
+
+
+$("topProducts").innerHTML=list.length
+?`
+
+<table>
+
+<thead>
+
+<tr>
+<th>المنتج</th>
+<th>الكمية المباعة</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+${list.map(x=>`
+
+<tr>
+<td>${esc(x[0])}</td>
+<td>${x[1]}</td>
+</tr>
+
+`).join("")}
+
+</tbody>
+
+</table>
+
+`
+:"<p>لا توجد مبيعات.</p>";
 
 }
 
 
-/* =========================
-   الحساب
-========================= */
+/*
+=========================================================
+الحاسبة
+=========================================================
+*/
+
+["cBuy","cSell","cQty"].forEach(id=>{
+
+$(id).oninput=calculate;
+
+});
+
+
+function calculate(){
+
+
+const buy=
+Number($("cBuy").value||0);
+
+const sell=
+Number($("cSell").value||0);
+
+const qty=
+Number($("cQty").value||0);
+
+
+$("cTotalBuy").textContent=
+money(buy*qty);
+
+$("cTotalSell").textContent=
+money(sell*qty);
+
+$("cProfit").textContent=
+money((sell-buy)*qty);
+
+}
+
+
+/*
+=========================================================
+الحساب
+=========================================================
+*/
 
 $("saveAccount").onclick=async()=>{
 
-  const data={
 
-    name:$("accName").value.trim(),
+const data={
 
-    store:$("accStore").value.trim(),
+name:$("accName").value.trim(),
 
-    phone:$("accPhone").value.trim(),
+store:$("accStore").value.trim(),
 
-    updatedAt:serverTimestamp()
+phone:$("accPhone").value.trim(),
 
-  };
-
-
-  await updateDoc(
-    userDocument(),
-    data
-  );
-
-
-  profile={
-    ...profile,
-    ...data
-  };
-
-
-  renderDashboard();
-
-  showToast("تم حفظ بيانات الحساب.");
+updatedAt:serverTimestamp()
 
 };
 
 
-/* =========================
-   النسخ الاحتياطي
-========================= */
-
-$("exportBtn").onclick=()=>{
-
-  const backup={
-
-    version:1,
-
-    exportedAt:new Date().toISOString(),
-
-    profile:profile,
-
-    products:products,
-
-    transactions:transactions,
-
-    expenses:expenses
-
-  };
+await updateDoc(
+userRef(),
+data
+);
 
 
-  const blob=
-  new Blob(
-    [
-      JSON.stringify(
-        backup,
-        null,
-        2
-      )
-    ],
-    {
-      type:"application/json"
-    }
-  );
-
-
-  const url=
-  URL.createObjectURL(blob);
-
-
-  const a=
-  document.createElement("a");
-
-
-  a.href=url;
-
-  a.download=
-  "NEXO-Hisabi-Backup.json";
-
-
-  a.click();
-
-
-  URL.revokeObjectURL(url);
-
+profile={
+...profile,
+...data
 };
 
 
-$("importFile").onchange=async event=>{
+renderDashboard();
 
-  const file=
-  event.target.files[0];
-
-  if(!file)return;
-
-
-  try{
-
-    const backup=
-    JSON.parse(
-      await file.text()
-    );
-
-
-    if(
-      !backup||
-      !Array.isArray(backup.products)
-    ){
-
-      throw new Error();
-
-    }
-
-
-    const batch=
-    writeBatch(db);
-
-
-    backup.products.forEach(product=>{
-
-      const id=
-      product.id||
-      crypto.randomUUID();
-
-
-      const copy={
-        ...product
-      };
-
-
-      delete copy.id;
-
-      delete copy.createdAt;
-
-
-      batch.set(
-        doc(
-          userCollection("products"),
-          id
-        ),
-        {
-          ...copy,
-          createdAt:serverTimestamp()
-        }
-      );
-
-    });
-
-
-    (backup.transactions||[])
-    .forEach(transaction=>{
-
-      const id=
-      transaction.id||
-      crypto.randomUUID();
-
-
-      const copy={
-        ...transaction
-      };
-
-
-      delete copy.id;
-
-      delete copy.createdAt;
-
-
-      batch.set(
-        doc(
-          userCollection("transactions"),
-          id
-        ),
-        {
-          ...copy,
-          createdAt:serverTimestamp()
-        }
-      );
-
-    });
-
-
-    (backup.expenses||[])
-    .forEach(expense=>{
-
-      const id=
-      expense.id||
-      crypto.randomUUID();
-
-
-      const copy={
-        ...expense
-      };
-
-
-      delete copy.id;
-
-      delete copy.createdAt;
-
-
-      batch.set(
-        doc(
-          userCollection("expenses"),
-          id
-        ),
-        {
-          ...copy,
-          createdAt:serverTimestamp()
-        }
-      );
-
-    });
-
-
-    await batch.commit();
-
-
-    await loadData();
-
-
-    showToast(
-      "تم استرجاع النسخة بنجاح."
-    );
-
-
-  }catch(error){
-
-    console.error(error);
-
-    showToast(
-      "ملف النسخة غير صالح.",
-      true
-    );
-
-  }
+toast("تم حفظ بيانات الحساب.");
 
 };
 
-
-/* =========================
-   الحسابات
-========================= */
 
 function renderAccount(){
 
-  $("accName").value=
-  profile.name||"";
 
-  $("accUsername").value=
-  profile.username||"";
+$("accName").value=
+profile.name||"";
 
-  $("accStore").value=
-  profile.store||"";
+$("accUsername").value=
+profile.username||"";
 
-  $("accPhone").value=
-  profile.phone||"";
+$("accStore").value=
+profile.store||"";
+
+$("accPhone").value=
+profile.phone||"";
 
 }
 
 
-/* =========================
-   Render All
-========================= */
+/*
+=========================================================
+النسخ الاحتياطي
+=========================================================
+*/
+
+$("exportBtn").onclick=()=>{
+
+
+const backup={
+
+version:1,
+
+createdAt:new Date().toISOString(),
+
+profile,
+
+products,
+
+transactions,
+
+expenses
+
+};
+
+
+const blob=
+new Blob(
+[
+JSON.stringify(
+backup,
+null,
+2
+)
+],
+{
+type:"application/json"
+}
+);
+
+
+const url=
+URL.createObjectURL(blob);
+
+
+const a=
+document.createElement("a");
+
+a.href=url;
+
+a.download=
+"NEXO-Hisabi-Backup.json";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+};
+
+
+$("importFile").onchange=async e=>{
+
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+
+try{
+
+
+const backup=
+JSON.parse(
+await file.text()
+);
+
+
+if(!backup.products){
+
+toast(
+"ملف النسخة غير صالح.",
+true
+);
+
+return;
+
+}
+
+
+const batch=writeBatch(db);
+
+
+backup.products.forEach(p=>{
+
+const id=
+p.id||crypto.randomUUID();
+
+const copy={...p};
+
+delete copy.id;
+
+delete copy.createdAt;
+
+
+batch.set(
+doc(userCol("products"),id),
+{
+...copy,
+createdAt:serverTimestamp()
+}
+);
+
+});
+
+
+(backup.transactions||[])
+.forEach(t=>{
+
+const id=
+t.id||crypto.randomUUID();
+
+const copy={...t};
+
+delete copy.id;
+
+delete copy.createdAt;
+
+
+batch.set(
+doc(userCol("transactions"),id),
+{
+...copy,
+createdAt:serverTimestamp()
+}
+);
+
+});
+
+
+(backup.expenses||[])
+.forEach(x=>{
+
+const id=
+x.id||crypto.randomUUID();
+
+const copy={...x};
+
+delete copy.id;
+
+delete copy.createdAt;
+
+
+batch.set(
+doc(userCol("expenses"),id),
+{
+...copy,
+createdAt:serverTimestamp()
+}
+);
+
+});
+
+
+await batch.commit();
+
+await loadData();
+
+toast("تم استرجاع البيانات.");
+
+
+}catch(error){
+
+console.error(error);
+
+toast(
+"تعذر استرجاع الملف.",
+true
+);
+
+}
+
+};
+
+
+/*
+=========================================================
+إغلاق النافذة
+=========================================================
+*/
+
+$("closeModal").onclick=()=>{
+
+$("modal").classList.add("hidden");
+
+};
+
+
+$("modal").onclick=e=>{
+
+if(e.target.id==="modal"){
+
+$("modal").classList.add("hidden");
+
+}
+
+};
+
+
+/*
+=========================================================
+كل شيء
+=========================================================
+*/
 
 function renderAll(){
 
-  renderDashboard();
+renderDashboard();
 
-  renderProducts();
+renderProducts();
 
-  fillProductSelects();
+fillProducts();
 
-  renderExpenses();
+renderExpenses();
 
-  renderInventory();
+renderInventory();
 
-  renderReports();
+renderReports();
 
-  renderAccount();
+renderAccount();
 
-  calculator();
+calculate();
 
 }
 
 
-/* =========================
-   حالة تسجيل الدخول
-========================= */
+/*
+=========================================================
+تشغيل Firebase
+=========================================================
+*/
 
 onAuthStateChanged(
-  auth,
-  async user=>{
-
-    currentUser=user;
+auth,
+async user=>{
 
 
-    if(user){
-
-      $("auth").classList.add("hidden");
-
-      $("app").classList.remove("hidden");
+currentUser=user;
 
 
-      try{
+if(user){
 
-        await loadData();
 
-      }catch(error){
+$("auth").classList.add("hidden");
 
-        console.error(error);
+$("app").classList.remove("hidden");
 
-        showToast(
-          "تعذر تحميل البيانات. تأكد من إعداد Firebase.",
-          true
-        );
 
-      }
+try{
 
-    }else{
+await loadData();
 
-      $("app").classList.add("hidden");
+}catch(error){
 
-      $("auth").classList.remove("hidden");
+console.error(error);
 
-    }
-
-  }
+toast(
+"تعذر تحميل البيانات.",
+true
 );
+
+}
+
+
+}else{
+
+
+$("app").classList.add("hidden");
+
+$("auth").classList.remove("hidden");
+
+
+}
+
+});
 
 </script>
 
